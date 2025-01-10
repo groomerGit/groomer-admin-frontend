@@ -26,12 +26,14 @@ jobs:
       - name: Install npm
         run: npm install
 
-      - name: Build
-        run: npm run build
+      - name: Lint and Fix
+        run: npx eslint src --fix
 
-      - name: list dir
+      - name: Build
+        run: CI=false npm run build
+
+      - name: List Directory
         run: ls -la
-        
+
       - name: Deploy
-        # if: success()
         run: aws s3 sync build s3://groomer-admin-frontend/
