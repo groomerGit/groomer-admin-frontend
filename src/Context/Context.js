@@ -2,7 +2,7 @@ const isLocal = false;
 
 const Context = isLocal
   ? "http://localhost:8000"
-  : "http://localhost:8000";
+  : "https://api.groomer.today/api/";
 
 const SALON_TOKEN = "salon_token";
 
